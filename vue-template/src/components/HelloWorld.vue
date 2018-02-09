@@ -1,27 +1,36 @@
 <template>
   <div class="hello">
-    <button @click="addNumHandler">点赞</button> </br>
+    <button @click="addNum(2)">点赞</button> </br>
     <span>{{agreeNum}}</span>
   </div>
 </template>
 
 <script>
-import {mapState,mapAction} from 'vuex'
+import {mapGetters,mapState,mapActions} from 'vuex'
 export default {
   data () {
     return {
       
     }
   },
-  computed:{
-      agreeNum(){
-          return this.$store.state.UserModule.agreeNum
-      }
-  },
+    //   ...mapGetters([
+    //     'agreeNum',
+    //   ]),
+    //   当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。
+  computed:
+        mapState([
+            'agreeNum'
+        ]),
+  
   methods:{
-    addNumHandler(){
-        this.$store.dispatch('addNum')
-    }
+    ...mapActions([
+        'addNum', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
+        // 'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
+    ]),
+    // addNumHandler(){
+    //     // this.$store.dispatch('addNum')
+    //     this.$store.dispatch('addNum').UserModule
+    // }
   }
 }
 </script>
