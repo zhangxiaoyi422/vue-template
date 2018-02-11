@@ -7,9 +7,9 @@ import UserModule from './../store/modules/UserModule'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    namespaced:true,//对模块进行命名空间设置
+    namespaced: true,//对模块进行命名空间设置
     modules: {
-        NewsModules:NewsModules,
-        UserModule:UserModule
+        NewsModules: NewsModules,
+        UserModule: UserModule
     }
 })

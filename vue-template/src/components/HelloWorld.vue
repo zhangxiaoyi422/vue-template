@@ -13,15 +13,11 @@ export default {
       
     }
   },
-    //   ...mapGetters([
-    //     'agreeNum',
-    //   ]),
-    //   当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。
-  computed:
-        mapState([
+  computed:{
+        ...mapState('UserModule',[
             'agreeNum'
-        ]),
-  
+        ])
+  },
   methods:{
     ...mapActions([
         'addNum', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
