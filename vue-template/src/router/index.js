@@ -9,6 +9,7 @@ const HelloWorld = r => require.ensure([], () => r(require("../components/HelloW
 Vue.use(Router)
 
 export default new Router({
+  // mode:history,
   routes: [
     {
       path: '/a',
