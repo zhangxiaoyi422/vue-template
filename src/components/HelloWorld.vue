@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <button @click="addNum(2)">点赞</button></br>
+    <button @click="addNum(2)">点赞11111111111111111111</button></br>
     <span>{{agreeNum}}</span>
   </div>
 </template>
